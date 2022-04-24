@@ -1,11 +1,29 @@
 package xyz.anonymous.wali
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContent {
+            HomePage()
+        }
+    }
+
+    @Composable
+    fun HomePage() {
+        Text("Hello World!")
+    }
+
+    @Preview
+    @Composable
+    fun Preview() {
+        HomePage()
     }
 }
